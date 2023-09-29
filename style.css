@@ -42,6 +42,8 @@ table {
 	border-spacing: 0;
 }
 
+
+
 /* ------------------------------------------------------------------------------------------------------- */
 /* ------------------------------------------------------------------------------------------------------- */
 
@@ -68,21 +70,27 @@ p{
 body{
     display: flex;
     flex-direction: column;
+    color: var(--txtColor);
+    font-family: extraFont;
+    height: 100vh;
+    justify-content: space-between;
 }
 .content{
     display: flex;
     flex-direction: row;
+    width: 100%;
+    flex: 1;
 }
 /* SIDEBAR */
 .sideBar{
     background-color: var(--accentColor);
     color: var(--txtColor);
     font-family: extraFont;
-    height: 90vh;
+   
     
 }
 .logo{
-    width: 135px;
+    width: 110px;
     height: auto;
 }
 .logoSideBar{
@@ -97,15 +105,229 @@ body{
     margin-left: 40px;
     
 }
+
 .supportSideBar{
-    font-size: 40px;
-    margin: 20px;
-    margin-left: 40px;
-    margin-top: 35px;
+   font-size: 40px;
+   margin: 20px;
+   margin-left: 40px;
+   margin-top: 75px;
 }
 li{
-    margin-top: 10px;
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
 }
+ li>img{
+    width: 25px; 
+    margin-right: 35px;
+    
+}
+
+.sideBar{
+    width: 100px;
+    overflow: hidden;
+    transition: ease-in-out .75s ;
+    box-sizing: content-box;
+    height: 100%;
+    align-items: start;
+    display: flex;
+}
+.sideBar:hover{
+    width: 20%;
+    
+    
+}
+.sideContent{
+    position:-webkit-sticky;
+  position:sticky;
+  top: 0;
+}
+
+/* ///////////////////////////// */
+.right{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* HEADBAR */
+.header{
+    background-color: var(--secColor);
+    display: grid;
+    grid-template-columns: 3fr 3fr; 
+    grid-template-rows: 1fr 1fr;
+    height: 215px;
+    
+ }
+.searchBar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 2%;
+}
+
+.searchBar>img{
+    width: 20px;
+    margin-right: 20px;
+    margin-left: 40px;
+}
+#searchBar{
+    border-radius: 10px;
+    background-color: gray;  
+    width: 70%;
+    padding: 5px 15px 5px 10px;
+    font-size: 20px;
+}
+.userDisplay{
+    margin:10px;
+    display: flex;
+    margin-right: 40px;
+    padding: 10px;
+    align-items: center;
+    justify-content: end;
+    font-size: 25px;
+   
+}
+.userDisplay>button{
+    background: no-repeat url(resource/bell-ring.png);
+    width: 25px;
+    height: 25px;
+    background-size:contain;
+    border-radius: 150px;
+    border: none;
+    margin-right: 10px;
+}
+
+
+.userDisplay>.userPic{
+    border-radius: 150px;
+    width: 50px;
+    background-color: grey;
+    
+}
+.userDisplay *{
+    margin: 10px;
+    margin-right: 20px;
+    
+}
+.userPic{
+    border-radius: 150px;
+    width: 90px;
+}
+
+.greetingUser{
+    display: flex;
+
+}
+.greetingUser>img{
+    margin:20px;
+    margin-top: 0px;
+    margin-left: 70px;
+
+}
+.actionButtons{
+    margin: 10px;
+    display: flex;
+    /* margin: 10px; */
+    padding: 10px;
+    align-items: center;
+    justify-content: end;
+}
+.actionButtons>button{
+    background-color: var(--accentColor);
+    font-family: extraFont;
+    border-radius: 15px;
+    padding: 10px;
+    font-size: 20px;
+    margin: 10px;
+    width: 75px;
+}
+
+ /* MAIN BODY */
+.mainBody{
+    background-color: var(--bcgColor);
+    display: grid;
+    grid-template: 25% 25% 25% 25% / 25% 25% 25% 25%;
+    height: 100%;
+    
+}
+.cardBox{
+    display: grid;
+    padding: 20px;
+    grid-template-columns: repeat(2, 1fr); 
+    grid-template-rows: repeat(3, 1fr);
+    gap: 20px;
+    grid-area: 1 / 1 / 5 / 4;
+    
+}
+.post{
+    width: 80%;
+    border-left: 10px solid var(--accentColor);
+    border-radius: 5px;
+    display: grid;
+    margin: 20px;
+    padding: 20px;
+    background-color:var(--primColor);
+
+}
+.news *, .post *{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.news>h1, .post>h1{
+    font-size: 120%;
+    font-weight: bolder;
+}
+article{
+    font-size: 20px;
+}
+.sideMainBody{
+    grid-area: 1 / 4 / 5 / 5;
+    padding: 20px;
+    
+}
+.announcements{
+    background-color: var(--primColor);
+    margin: 20px;
+    border-radius: 5px;
+}
+.news{
+    padding: 20px;
+    
+}
+hr{
+    margin: 0px 20px 0px 20px;
+    border-color: var(--accentColor);
+}
+    
+
+    
+.trending{
+    background-color: var(--primColor);
+    padding: 20px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}    
+    
+.user{
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+}
+
+.user:not(:last-child){
+margin-bottom: 15px;
+}
+
+.user>img{
+    width: 50px;
+    border-radius: 50px;
+    margin-right: 20px;
+}
+
+
 
 /* FOOTER */
 .footer{
